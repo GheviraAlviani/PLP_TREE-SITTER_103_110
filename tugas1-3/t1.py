@@ -13,6 +13,11 @@ if nilai >= 80:
     print("Lulus")
 else:
     print("Tidak Lulus")
+
+class Mahasiswa:
+    def salam(self):
+        print("Halo, saya seorang mahasiswa.")
+
 """
 tree = parser.parse(kode)
 print(tree.root_node)
