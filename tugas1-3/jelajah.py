@@ -10,7 +10,9 @@ def jelajah(node, kedalaman=0, field=None):
     print("  " * kedalaman + f"{label}{node.type} [{baris + 1}:{kolom}]")
     # TODO: untuk setiap child yang bernama, panggil jelajah() lagi
     #       dengan kedalaman + 1 dan nama field-nya.
-
+    for i, anak in enumerate(node.children):
+        if anak.is_named:
+            jelajah(anak, kedalaman + 1, node.field_name_for_child(i))
 with open(sys.argv[1], "rb") as f:
     tree = parser.parse(f.read())
 jelajah(tree.root_node)
