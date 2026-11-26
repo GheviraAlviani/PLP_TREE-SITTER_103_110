@@ -19,10 +19,12 @@ export default grammar({
       $.comparison,
       $.and_expression,
       $.or_expression,
+      $.parenthesized,
     ),
 
     and_expression: $ => prec.left(2, seq($._expr, 'and', $._expr)),
     or_expression: $ => prec.left(1, seq($._expr, 'or', $._expr)),
+    parenthesized: $ => seq('(', $._expr, ')'),
 
     comparison: $ => seq(
       $.identifier,
