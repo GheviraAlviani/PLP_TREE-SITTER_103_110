@@ -1,1 +1,1 @@
-not archived = true
+status = "open" and priority > 2 or not archived = true and tag in ("a", "b") and title contains "x"
