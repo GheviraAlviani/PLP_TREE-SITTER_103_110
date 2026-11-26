@@ -83,3 +83,17 @@ kurung mengubah prioritas
     (comparison
       (identifier)
       (number))))
+
+==================
+not dan boolean
+==================
+
+not archived = true
+
+---
+
+(query
+  (not_expression
+    (comparison
+      (identifier)
+      (boolean))))
