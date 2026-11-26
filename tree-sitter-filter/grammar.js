@@ -1,6 +1,7 @@
 /**
  * @file Filter grammar for tree-sitter
  * @author Ghevira
+ * @author Luthfiana
  * @license MIT
  */
 
@@ -8,10 +9,12 @@
 // @ts-check
 
 export default grammar({
-  name: "filter",
-
+  name: 'filter',
+  extras: $ => [/\s/],
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    query: $ => $.comparison,
+    comparison: $ => seq($.identifier, '=', $.string),
+    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.]*/,
+    string: $ => /"[^"]*"/,
   }
 });
