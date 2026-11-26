@@ -46,9 +46,24 @@ Repo: https://github.com/josharsh/100LinesOfCode
 | File dengan error sintaks | 2 |
 | Komentar TODO/FIXME | 0 |
 
-Cek manual (file dipilih karena memiliki temuan):
+### Cara hitung manual
+
+- Panjang fungsi = baris terakhir fungsi - baris `def` + 1.
+- TODO/FIXME dicari dengan `Ctrl+F` di VS Code.
+- Hasilnya dibandingkan dengan `hasil_repo.txt`.
+
+### Cek manual 2 file acak
+
+File dipilih dengan `find ~/repo-uji -name "*.py" | shuf -n 2`.
 
 | File | Hitungan manual | Output cek.py | Cocok |
 |---|---|---|---|
-| CaesarCipher/CaesarCipher.py | caesar_encrypt: 32 baris | 32 baris | Ya |
-| Wikipedia-Summary-CLI/Wiki_summary.py | search_and_summarize: 35, main: 35 | 35, 35 | Ya |
+| Hash/hashing.py | calculate_hash: 14-5+1 = 10, print_usage: 19-16+1 = 4, tanpa TODO/error | tidak ada temuan | Ya |
+| morse_translator/morse_translator.py | encrypt: 26-19+1 = 8, decrypt: 47-29+1 = 19, tanpa TODO/error | tidak ada temuan | Ya |
+
+### Cek tambahan pada file yang memiliki temuan
+
+| File | Hitungan manual | Output cek.py | Cocok |
+|---|---|---|---|
+| CaesarCipher/CaesarCipher.py | caesar_encrypt: 40-9+1 = 32 | 32 baris | Ya |
+| Wikipedia-Summary-CLI/Wiki_summary.py | search_and_summarize: 57-23+1 = 35, main: 93-59+1 = 35 | 35 dan 35 baris | Ya |
